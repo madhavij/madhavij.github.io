@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Hello SASS!</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="An introduction to SASS preprocessor ,how it can save web designers from half of CSS troubles and the additional functionalities that it ...">
+
+        <meta name="author" content="Madhavi Jouhari">
+
+        <meta name="tags" content="sass">
+        <meta name="tags" content="css">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Code Memoirs">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="/author/madhavi-jouhari.html">
+	<meta property="og:url" content="/sass.html">
+	<meta property="og:title" content="Hello SASS!">
+	<meta property="article:published_time" content="2015-05-20 00:00:00+05:30">
+            <meta property="og:description" content="An introduction to SASS preprocessor ,how it can save web designers from half of CSS troubles and the additional functionalities that it ...">
+
+            <meta property="og:image" content="//images/hex.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Code Memoirs</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/images/hex.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Hello SASS!</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+                             on Wed 20 May 2015
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <div style="text-align:center">
+<p><img alt="Selection" src="https://cdn-images-2.medium.com/max/800/0*KrEuqmDA05Ze3_LX.jpg" /></p>
+</div>
+<p>As much as everyone loves writing styles in CSS, but lets face it, there are no smart options to write code in it. There is repetition of similar code all over our stylesheet for different selectors. Taking up much time and effort. If the hex value of a color has to be changed in the entire document, the process is a manual one, much like a linear search. The vendor prefixes that impart such cool effects after rendering, makes developer write long redundant code for every browser support.</p>
+<p>Preprocessors like SASS, Less , etc. targets these pain points and comes up with ways to ease up the process of writing and maintaining huge amount of CSS. It doesn’t replace CSS by any means. It adds a cleaner syntax and useful additional functionalities.</p>
+<blockquote>
+<p>Like a higher level programming language compiles to assembly language, SASS code compiles into CSS code.</p>
+</blockquote>
+<h2>Say Hello to Syntactically Awesome Style Sheet!</h2>
+<p>SASS introduces features such as Nesting, Variables, Mixins , Control Statements, Mathematical operators, Inheritance &amp; better in-built functions to increase the utility of CSS furthermore, making it a designer’s programming language.</p>
+<h3>1.  Nesting</h3>
+<p>Instead of repeating selectors’ list over and over, it allows nesting selectors and rules. It makes the structure of the stylesheets similar to the DOM structure.</p>
+<p>Below .scss code snippet</p>
+<div class="highlight"><pre><span class="nc">.navbar</span> <span class="p">{</span>
+  <span class="n">ul</span> <span class="err">{</span>
+    <span class="nb">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+    <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nb">list-style</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nn">#links</span> <span class="p">{</span>
+    <span class="nb">display</span><span class="o">:</span> <span class="nb">inline</span><span class="o">-</span><span class="nb">block</span><span class="p">;</span>
+    <span class="n">a</span> <span class="err">{</span>
+        <span class="nb">padding</span><span class="o">:</span> <span class="m">5px</span> <span class="m">12px</span><span class="p">;</span>
+        <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+     <span class="p">}</span>
+   <span class="err">}</span>
+<span class="err">}</span>
+</pre></div>
+
+
+<p>this is the .css file that is being generated:</p>
+<div class="highlight"><pre><span class="nc">.navbar</span> <span class="nt">ul</span> <span class="p">{</span>
+  <span class="nb">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
+  <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nb">list-style</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.navbar</span> <span class="nn">#links</span> <span class="p">{</span>
+  <span class="nb">display</span><span class="o">:</span> <span class="nb">inline</span><span class="o">-</span><span class="nb">block</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.navbar</span> <span class="nn">#links</span> <span class="nt">a</span> <span class="p">{</span>
+  <span class="nb">padding</span><span class="o">:</span> <span class="m">5px</span> <span class="m">12px</span><span class="p">;</span>
+  <span class="nb">text-decoration</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Although it is a good practice to avoid nesting elements more than 3 levels deep as to prevent making the css too rigid!</p>
+<h3>2. Variables &amp; Operators</h3>
+<p>The simple yet powerful feature borrowed from programming languages can make writing css a relief! Values that has to be reused throughout the  stylesheet can be stored in them. One can store things like colors, font stacks, or any CSS value that has to be reused. It is also possible to do mathematical operations with them.</p>
+<div class="highlight"><pre><span class="o">$</span><span class="nt">official-fonts</span><span class="o">:</span>  <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">Georgia</span><span class="o">;</span>
+<span class="o">$</span><span class="nt">brand-color</span><span class="o">:</span> <span class="nn">#d3178d</span><span class="o">;</span>
+<span class="o">$</span><span class="nt">page-margin</span><span class="nd">:10px</span> <span class="o">+</span> <span class="nt">10px</span><span class="o">;</span>
+
+<span class="nc">.header</span> <span class="p">{</span>
+  <span class="nb">font</span><span class="o">:</span>  <span class="err">$</span><span class="n">official</span><span class="o">-</span><span class="n">fonts</span><span class="p">;</span>
+  <span class="nb">background-color</span><span class="o">:</span> <span class="err">$</span><span class="n">brand</span><span class="o">-</span><span class="nb">color</span><span class="p">;</span>
+  <span class="nb">margin</span><span class="o">:</span><span class="err">$</span><span class="nb">page</span><span class="o">-</span><span class="nb">margin</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>The above .scss generates the .css below:</p>
+<div class="highlight"><pre><span class="nc">.header</span> <span class="p">{</span>
+  <span class="nb">font</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="n">Georgia</span><span class="p">;</span>
+  <span class="nb">background-color</span><span class="o">:</span> <span class="m">#d3178d</span><span class="p">;</span>
+  <span class="nb">margin</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now if the brand color has to be changed, there won’t be a need to make countless changes in the css, just change the value of a single variable and its done!</p>
+<h3>3. Mixins</h3>
+<p>These are a reusable block of code which can be mixed in to another ruleset with ease. It also accepts arguments.
+They give us the ability to build a reusable library of styles, but most commonly used for vendor prefixes.</p>
+<div class="highlight"><pre> <span class="k">@mixin</span> <span class="nt">border-radius</span><span class="o">($</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nt">-webkit-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+     <span class="nt">-moz-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+      <span class="nt">-ms-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+          <span class="nt">border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
+<span class="p">}</span>
+
+<span class="nc">.box</span> <span class="p">{</span> <span class="o">@</span><span class="n">include</span> <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="p">(</span><span class="m">20px</span><span class="p">);</span> <span class="p">}</span>
+<span class="nc">.circle</span> <span class="p">{</span>  <span class="o">@</span><span class="n">include</span> <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="p">(</span><span class="m">5px</span><span class="p">);}</span>
+</pre></div>
+
+
+<p>The above .scss generates the .css below:</p>
+<div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+  <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.circle</span> <span class="p">{</span>
+  <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+  <span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">5px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3>4. Functions</h3>
+<p>These things keep the reusable logic out of any specific declarations and it accepts arguments too. It is also considered a close cousin of mixins.
+ Then what makes them different from each other?</p>
+<blockquote>
+<p>Mixins returns lines of SASS code, while a function returns a single value.</p>
+</blockquote>
+<p>Following function achieves responsiveness for a fluid layout :</p>
+<div class="highlight"><pre><span class="k">@function</span> <span class="nt">calculated-width</span><span class="o">($</span><span class="nt">target</span><span class="o">,</span> <span class="o">$</span><span class="nt">container</span><span class="o">)</span><span class="p">{</span>
+    <span class="k">@return</span> <span class="o">($</span><span class="nt">target</span><span class="o">/$</span><span class="nt">container</span><span class="o">)*</span> <span class="nt">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="p">}</span>
+
+<span class="nc">.contentBox</span><span class="p">{</span>
+  <span class="nb">width</span><span class="o">:</span><span class="n">calculated</span><span class="o">-</span><span class="nb">width</span><span class="p">(</span><span class="m">500px</span><span class="o">,</span> <span class="m">1024px</span><span class="p">);</span>
+  <span class="nb">height</span><span class="o">:</span><span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This in turn will compile to:</p>
+<div class="highlight"><pre><span class="nc">.contentBox</span> <span class="p">{</span>
+  <span class="nb">width</span><span class="o">:</span> <span class="m">48.82813%</span><span class="p">;</span>
+  <span class="nb">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>This lets the SASS do the math for you.</p>
+<p>It is considered a good practice to refactor &amp; abstract the methods behind successful techniques to make them reusable for next projects.</p>
+<h3>5. Imports</h3>
+<p>For management of complex and huge stylesheets,designers split their style sheet up into several smaller CSS files and then import those style sheets from within the main stylesheet.
+Every import statement will generate a separate HTTP request.</p>
+<p>Now,  @imports have long been a part of CSS, then what is new about the SASS version of it?</p>
+<p>SASS combines these imported files with the main stylesheet, and serves a single file to the browser.</p>
+<div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;scss/base&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;scss/variables&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;scss/typography&quot;</span><span class="p">;</span>
+<span class="k">@import</span> <span class="s2">&quot;scss/images&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Getting started with SASS is easy.Switching to a preprocessor make development and maintenance easier. It makes the code modular, organized , non-repetitive, lighter to load and lets you make your own custom functions in CSS.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/sass.html">sass</a>, <a href="/tag/css.html">css</a></p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/madhavij">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/__madhavi__">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
