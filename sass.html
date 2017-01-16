@@ -117,7 +117,7 @@
 <h3>1.  Nesting</h3>
 <p>Instead of repeating selectors’ list over and over, it allows nesting selectors and rules. It makes the structure of the stylesheets similar to the DOM structure.</p>
 <p>Below .scss code snippet</p>
-<div class="highlight"><pre><span class="nc">.navbar</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="nc">.navbar</span> <span class="p">{</span>
   <span class="n">ul</span> <span class="err">{</span>
     <span class="nb">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
     <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
@@ -136,7 +136,7 @@
 
 
 <p>this is the .css file that is being generated:</p>
-<div class="highlight"><pre><span class="nc">.navbar</span> <span class="nt">ul</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="nc">.navbar</span> <span class="nt">ul</span> <span class="p">{</span>
   <span class="nb">margin</span><span class="o">:</span> <span class="m">10px</span><span class="p">;</span>
   <span class="nb">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="nb">list-style</span><span class="o">:</span> <span class="nb">none</span><span class="p">;</span>
@@ -156,7 +156,7 @@
 <p>Although it is a good practice to avoid nesting elements more than 3 levels deep as to prevent making the css too rigid!</p>
 <h3>2. Variables &amp; Operators</h3>
 <p>The simple yet powerful feature borrowed from programming languages can make writing css a relief! Values that has to be reused throughout the  stylesheet can be stored in them. One can store things like colors, font stacks, or any CSS value that has to be reused. It is also possible to do mathematical operations with them.</p>
-<div class="highlight"><pre><span class="o">$</span><span class="nt">official-fonts</span><span class="o">:</span>  <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">Georgia</span><span class="o">;</span>
+<div class="highlight"><pre><span></span><span class="o">$</span><span class="nt">official-fonts</span><span class="o">:</span>  <span class="nt">Helvetica</span><span class="o">,</span> <span class="nt">Arial</span><span class="o">,</span> <span class="nt">Georgia</span><span class="o">;</span>
 <span class="o">$</span><span class="nt">brand-color</span><span class="o">:</span> <span class="nn">#d3178d</span><span class="o">;</span>
 <span class="o">$</span><span class="nt">page-margin</span><span class="nd">:10px</span> <span class="o">+</span> <span class="nt">10px</span><span class="o">;</span>
 
@@ -169,7 +169,7 @@
 
 
 <p>The above .scss generates the .css below:</p>
-<div class="highlight"><pre><span class="nc">.header</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="nc">.header</span> <span class="p">{</span>
   <span class="nb">font</span><span class="o">:</span> <span class="n">Helvetica</span><span class="o">,</span> <span class="n">Arial</span><span class="o">,</span> <span class="n">Georgia</span><span class="p">;</span>
   <span class="nb">background-color</span><span class="o">:</span> <span class="m">#d3178d</span><span class="p">;</span>
   <span class="nb">margin</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
@@ -181,7 +181,7 @@
 <h3>3. Mixins</h3>
 <p>These are a reusable block of code which can be mixed in to another ruleset with ease. It also accepts arguments.
 They give us the ability to build a reusable library of styles, but most commonly used for vendor prefixes.</p>
-<div class="highlight"><pre> <span class="k">@mixin</span> <span class="nt">border-radius</span><span class="o">($</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span> <span class="k">@mixin</span> <span class="nt">border-radius</span><span class="o">($</span><span class="nt">radius</span><span class="o">)</span> <span class="p">{</span>
   <span class="nt">-webkit-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
      <span class="nt">-moz-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
       <span class="nt">-ms-border-radius</span><span class="o">:</span> <span class="o">$</span><span class="nt">radius</span><span class="o">;</span>
@@ -194,7 +194,7 @@ They give us the ability to build a reusable library of styles, but most commonl
 
 
 <p>The above .scss generates the .css below:</p>
-<div class="highlight"><pre><span class="nc">.box</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="nc">.box</span> <span class="p">{</span>
   <span class="o">-</span><span class="n">webkit</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
   <span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
   <span class="o">-</span><span class="n">ms</span><span class="o">-</span><span class="nb">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">20px</span><span class="p">;</span>
@@ -216,7 +216,7 @@ They give us the ability to build a reusable library of styles, but most commonl
 <p>Mixins returns lines of SASS code, while a function returns a single value.</p>
 </blockquote>
 <p>Following function achieves responsiveness for a fluid layout :</p>
-<div class="highlight"><pre><span class="k">@function</span> <span class="nt">calculated-width</span><span class="o">($</span><span class="nt">target</span><span class="o">,</span> <span class="o">$</span><span class="nt">container</span><span class="o">)</span><span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="k">@function</span> <span class="nt">calculated-width</span><span class="o">($</span><span class="nt">target</span><span class="o">,</span> <span class="o">$</span><span class="nt">container</span><span class="o">)</span><span class="p">{</span>
     <span class="k">@return</span> <span class="o">($</span><span class="nt">target</span><span class="o">/$</span><span class="nt">container</span><span class="o">)*</span> <span class="nt">100</span><span class="o">%</span><span class="p">;</span>
   <span class="p">}</span>
 
@@ -228,7 +228,7 @@ They give us the ability to build a reusable library of styles, but most commonl
 
 
 <p>This in turn will compile to:</p>
-<div class="highlight"><pre><span class="nc">.contentBox</span> <span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="nc">.contentBox</span> <span class="p">{</span>
   <span class="nb">width</span><span class="o">:</span> <span class="m">48.82813%</span><span class="p">;</span>
   <span class="nb">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
@@ -242,7 +242,7 @@ They give us the ability to build a reusable library of styles, but most commonl
 Every import statement will generate a separate HTTP request.</p>
 <p>Now,  @imports have long been a part of CSS, then what is new about the SASS version of it?</p>
 <p>SASS combines these imported files with the main stylesheet, and serves a single file to the browser.</p>
-<div class="highlight"><pre><span class="k">@import</span> <span class="s2">&quot;scss/base&quot;</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><span class="k">@import</span> <span class="s2">&quot;scss/base&quot;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&quot;scss/variables&quot;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&quot;scss/typography&quot;</span><span class="p">;</span>
 <span class="k">@import</span> <span class="s2">&quot;scss/images&quot;</span><span class="p">;</span>

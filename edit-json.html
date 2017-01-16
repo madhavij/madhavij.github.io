@@ -107,7 +107,7 @@
 <p>I thought opening a JSON file was tricky. Understanding <em>loads</em> and <em>dumps</em> and the erross that came along were felt like head scratchers.</p>
 <p>Then I had to make changes in the json file in an automated manner. It took me quite some time, in the first attempt, so here I am documenting the logic.</p>
 <p>Lets say this is my simple json stored in a text file -  <em>data.json</em> .</p>
-<div class="highlight"><pre><span class="p">{</span>
+<div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;000&quot;</span><span class="p">,</span>
   <span class="nt">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Harvey Specter&quot;</span><span class="p">,</span>
   <span class="nt">&quot;Age&quot;</span><span class="p">:</span> <span class="s2">&quot;32&quot;</span><span class="p">,</span>
@@ -116,7 +116,7 @@
 
 
 <p>And here I am loading the file into a python structure, editing it, iterating to the beginning of file and dumping back the new content.</p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">json</span>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.json&#39;</span><span class="p">,</span><span class="s1">&#39;r+&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">filecontent</span><span class="p">:</span>
     <span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">filecontent</span><span class="p">)</span>
