@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-        <meta charset="utf-8">
+            <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-        <title>Code Memoirs - Articles by Madhavi Jouhari</title>
+        <title>Clearing Your Server's Cache</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
@@ -31,14 +31,25 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
 
-                    <meta property="og:locale" content="">
+
+
+        <meta name="description" content="Guide to deal with the fast filling Cache memory of your CentOS machine">
+
+        <meta name="author" content="Madhavi Jouhari">
+
+        <meta name="tags" content="linux">
+
+	                <meta property="og:locale" content="">
 		<meta property="og:site_name" content="Code Memoirs">
 
-    <meta property="og:title" content="Code Memoirs - Articles by Madhavi Jouhari">
-    <meta property="og:type" content="profile">
-    <meta property="profile:first_name" content="Madhavi">
-    <meta property="profile:last_name" content="Jouhari">
-    <meta property="profile:username" content="madhavi-jouhari">
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="/author/madhavi-jouhari.html">
+	<meta property="og:url" content="/clear-cache.html">
+	<meta property="og:title" content="Clearing Your Server's Cache">
+	<meta property="article:published_time" content="2016-06-05 00:00:00+05:30">
+            <meta property="og:description" content="Guide to deal with the fast filling Cache memory of your CentOS machine">
+
+            <meta property="og:image" content="//images/hex.jpg">
 </head>
 
 <body>
@@ -69,12 +80,17 @@
     </nav>
 
     <!-- Page Header -->
-        <header class="intro-header" style="background-image: url('images/header.jpg')">
+        <header class="intro-header" style="background-image: url('/images/hex.jpg')">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="post-heading">
-                        <h1>Articles by Madhavi Jouhari</h1>
+                        <h1>Clearing Your Server's Cache</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+                             on Sun 05 June 2016
+                        </span>
+                        
                     </div>
                 </div>
             </div>
@@ -85,76 +101,56 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-preview">
-            <a href="/regex-extraction.html" rel="bookmark" title="Permalink to Extracting To and From Location from a sentence">
-                <h2 class="post-title">
-                    Extracting To and From Location from a sentence
-                </h2>
-            </a>
-                Fetching specific keywords using regular expression
-            <p class="post-meta">Posted by
-                    <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-                 on Mon 19 December 2016
-            </p>
-        </div>
-        <div class="post-preview">
-            <a href="/git-rm.html" rel="bookmark" title="Permalink to Removing Accidental file pushed on Github">
-                <h2 class="post-title">
-                    Removing Accidental file pushed on Github
-                </h2>
-            </a>
-                Helpful, if you ever push into Github without thinking.
-            <p class="post-meta">Posted by
-                    <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-                 on Fri 16 December 2016
-            </p>
-        </div>
-        <div class="post-preview">
-            <a href="/edit-json.html" rel="bookmark" title="Permalink to Editing JSON - Python">
-                <h2 class="post-title">
-                    Editing JSON - Python
-                </h2>
-            </a>
-                I WILL need this later.
-            <p class="post-meta">Posted by
-                    <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-                 on Fri 08 July 2016
-            </p>
-        </div>
-        <div class="post-preview">
-            <a href="/clear-cache.html" rel="bookmark" title="Permalink to Clearing Your Server's Cache">
-                <h2 class="post-title">
-                    Clearing Your Server's Cache
-                </h2>
-            </a>
-                Guide to deal with the fast filling Cache memory of your CentOS machine
-            <p class="post-meta">Posted by
-                    <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-                 on Sun 05 June 2016
-            </p>
-        </div>
-        <div class="post-preview">
-            <a href="/d3.html" rel="bookmark" title="Permalink to Playing Around with D3">
-                <h2 class="post-title">
-                    Playing Around with D3
-                </h2>
-            </a>
-                A Guide to Create Simple D3 Visual.
-            <p class="post-meta">Posted by
-                    <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-                 on Mon 28 September 2015
-            </p>
+    <!-- Post Content -->
+    <article>
+        <p>Working with Linux machine can be intimidating in the begining. Especially if you've always been a Windows <em>junkie</em>.
+If one is not accustomed with the linux commands, they rely heavily on Google for every task. Some commands are used frequently, so we tend to remember them easily, others not so much.</p>
+<p>Working with servers teaches you frequent memory management.</p>
+<ol>
+<li>
+<p>If a disk fills up entirely, many services stop working since they have no space to write operational data.</p>
+</li>
+<li>
+<p>If it memory usage crosses the threshold value, it disables user to SSH into the machine.</p>
+</li>
+</ol>
+<h4>Diagnosis:</h4>
+<p>You can check your memory use with the <strong>free</strong> command. It gives the total free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. (Source: man pages)</p>
+<p><strong>-h</strong> : Stands for Human readable format where output fields are scaled to shortest three digit unit along with their units.</p>
+<div class="highlight"><pre><span></span>&gt;&gt; free -h
+</pre></div>
+
+
+<p>Once it is clear that you have memory issue, execute the following to flush cache of Linux memory:</p>
+<div class="highlight"><pre><span></span>&gt;&gt; sync; echo 3 &gt; /proc/sys/vm/drop_caches
+</pre></div>
+
+
+<p>You can replace the "echo 3" part with the following according to your requirement:</p>
+<p><strong>echo 1</strong> : To free pagecache</p>
+<p><strong>echo 2</strong> : To free dentries and inodes</p>
+<p><strong>echo 3</strong> : To free pagecache, dentries and inodes</p>
+<blockquote>
+<p>This is a non-destructive  operation and will only free things that are completely unused.  </p>
+</blockquote>
+<p>Dirty  objects will continue to be in use until written out to disk and are not freeable. Running <strong>sync</strong> before to flush them out to disk, these  drop operations will tend to free more memory.</p>
+<p>If your swap memory is also being utilized, there is a command to <strong>Force Release everything in Swap Partition back to Memory</strong>:</p>
+<div class="highlight"><pre><span></span>swapoff -a &amp;&amp; swapon -a
+</pre></div>
+
+
+<p>Its okay if you dont get hang of all the commands in the beginning. It gets better with time.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/linux.html">linux</a></p>
         </div>
 
+<hr>
+<div class="sharing">
+</div>
     <hr>
-    <!-- Pager -->
-    <ul class="pager">
-        <li class="next">
-                <a href="/author/madhavi-jouhari2.html">Older Posts &rarr;</a>
-        </li>
-    </ul>
-    Page 1 / 2
-    <hr>
+
             </div>
         </div>
     </div>
