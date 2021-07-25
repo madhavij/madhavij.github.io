@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Playing Around with D3</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="A Guide to Create Simple D3 Visual.">
+
+        <meta name="author" content="Madhavi Jouhari">
+
+        <meta name="tags" content="D3.js">
+        <meta name="tags" content="visualization">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Code Memoirs">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="/author/madhavi-jouhari.html">
+	<meta property="og:url" content="/d3.html">
+	<meta property="og:title" content="Playing Around with D3">
+	<meta property="article:published_time" content="2015-09-28 00:00:00+05:30">
+            <meta property="og:description" content="A Guide to Create Simple D3 Visual.">
+
+            <meta property="og:image" content="//images/hex.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Code Memoirs</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/images/hex.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Playing Around with D3</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+                             on Mo. 28 September 2015
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <h1>Playing Around with  D3.js</h1>
+<h3>A Guide to Create Simple D3 Visual</h3>
+<blockquote>
+<p><em>"A picture is worth a thousand words. A picture can also be worth many data points (or more!)"</em>. </p>
+</blockquote>
+<p>Traditionally data is stored in various tabular/text formats through which it becomes quite difficult to understand how it is fluctuating. But only when we plot the data into graph, we get a clear picture of how the data behaves.</p>
+<p>Months ago, I saw a presentation on this topic and although it was a basic introduction to the far fetched capacities of d3.js, it inspired me to read about it. So that is my goal with this blog post , I hope it grabs enough of your attention for you to dip your hands dirty in some d3 code!</p>
+<blockquote>
+<p>Starting with basic theoretical Introduction</p>
+</blockquote>
+<p>Data Driven Documents developed by <em>Mike Bostock</em> is for manipulating documents based on data. In layman terms, it will provide you with an interesting visual aid to represent that large amount of boring data.Its not a new technology altogether, its just a library created on top of JavaScript, so if you have a history in scripting, you might just enjoy creating this piece of document with me. It uses familiar JavaScript conventions which are easy to follow.</p>
+<p>D3 JavaScript library is very self-sufficient. It has no dependency on any JavaScript library than other what your browser already provides. In fact, it can even be used in a non-browser environment such as Node.js with some minimum setup. The syntax is a piece of cake if you have ever manipulated a DOM structure using JavaScript before. Dont worry, even if you haven’t, the code will be simple enough and  self-explanatory.</p>
+<p>To tag along, I highly recommend you to use a good editor like <a href="https://atom.io/">Atom</a> or <a href="http://www.sublimetext.com/3">Sublime</a>. Also you’d need this <a href="http://d3js.org/">d3.js</a> file to be included in your HTML.</p>
+<blockquote>
+<p>But first, what is Functional Chaining?</p>
+</blockquote>
+<p>Before you start to write the code, one thing you should be absolutely clear about is this coding style called Functional chaining, because here we’ll be using a lot of it. Without its knowledge, the code might seem pretty absurd to you. It is a technique that can be used to simplify code in scenarios that involve calling multiple functions on the same object consecutively. Its like a Unix pipeline where output of the first function is input to the next.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<p>If this style is not your cup of tea, you can anyways try the chain-less approach like this: </p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<blockquote>
+<p>Lets get  <em>started</em>:</p>
+</blockquote>
+<p><strong> Step 1: Selection:</strong>  It helps you target visual elements on the page.</p>
+<div class="highlight"><pre><span></span><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Its like telling a specific element which of its properties you’d like to manipulate.</p>
+<div style="text-align:center">
+<p><img alt="Selection" src="http://img1.ak.crunchyroll.com/i/spire4/8a657640d7333cbc5173e83751cb74da1404687460_full.jpg"></p>
+</div>
+<p><strong> Step 2: Binding data:</strong> Its as simple as : Input-&gt; Data, Output-&gt; Visual Representation. 
+Now that you have selected which element your data will be associated with, its time to map the data into visuals, and for that we first need to feed our data in.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">dataset</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span> <span class="p">];</span>
+<span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">dataset</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+</code></pre></div>
+
+<p><strong>d3.select(“body”)</strong> — Looks for the body in  DOM and hands a reference off to the next step in the chain.</p>
+<p><strong>.selectAll(“p”)</strong> — Selects all paragraphs. Since we dont have any,it will output empty selection.(Its ok, dont get confused, I'll explain this below!)</p>
+<p><strong>.data(dataset)</strong> — Counts and parses our data values. There are five values in our data set, so everything past this point is executed five times, once for each value.</p>
+<p>Now the paragraphs that I’ve selected do not exist in my DOM yet. Here we are selecting the elements which dont exist yet.</p>
+<p><em>What kind of sorcery is this?</em></p>
+<p>The enchanted <strong>enter()</strong> method: This method looks at the DOM, and then at the data given to it. If data is more than corresponding DOM elements, then enter() creates a new element on which you may work your magic. It then hands off a reference of this new placeholder to the next step in the chain.</p>
+<p><strong>append()</strong> : Takes the placeholder selection created by enter() and inserts a <strong>p</strong> element into the DOM. Ta-da! The element reference is passed on further in the chain.</p>
+<p><strong>Step 3: Put that data to work!</strong>
+ Lets change the last line to:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">height</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">;})</span>
+</code></pre></div>
+
+<p>You may be wondering why you have to write out <strong>function(d)</strong> instead of just <strong>d</strong> on its own. For example, this won’t give  you the height value:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span> <span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+</code></pre></div>
+
+<p>The reason for this syntax is that <em>.text(), attr()</em>, and many other D3 methods take a function as an argument. Here wrapping <strong>d</strong> in an anonymous function is necessary otherwise <strong>d</strong> will have no value.</p>
+<p>The anonymous function is simply returning the data value, but you can make it fancier by putting your custom code in it.</p>
+<p>For example this cool random color generator:</p>
+<div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">fill</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+ <span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">b</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
+ <span class="kd">var</span> <span class="nx">o</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
+ <span class="k">return</span> <span class="err">“</span><span class="nx">rgb</span><span class="p">(</span><span class="mi">245</span><span class="p">,</span><span class="err">”</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="o">+</span><span class="nx">c</span><span class="o">+</span><span class="err">”</span><span class="p">)</span><span class="err">”</span><span class="p">;</span>
+ <span class="p">});</span>
+</code></pre></div>
+
+<blockquote>
+<p><em>Say Hello to SVG!</em></p>
+</blockquote>
+<p>D3 is most useful when used to generate and manipulate visuals as SVGs as it is more reliable, visually consistent, and faster. Scalable Vector Graphics is a text-based image format. SVG code can be included directly within any HTML document. It is supported by almost every other modern browser.</p>
+<p>Before you can creating  anything, you must create an SVG element. Think of the SVG element as a canvas on which your visualizations are rendered.</p>
+<p>Its a good practice to give this SVG element a defined height and width, otherwise it will take up as much room as it can within its enclosing element.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Lets make something from what we’ve <em>learnt</em> so far!</p>
+<div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">w</span><span class="o">=</span><span class="mi">600</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">h</span><span class="o">=</span> <span class="mi">250</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">dataset</span><span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">base</span><span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;svg&#39;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span><span class="nx">h</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span><span class="nx">w</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">chart</span><span class="o">=</span> <span class="nx">base</span><span class="p">.</span><span class="nx">selectAll</span><span class="p">(</span><span class="s1">&#39;rect&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">dataset</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
+                <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;rect&#39;</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">i</span><span class="p">){</span><span class="k">return</span> <span class="nx">i</span><span class="o">*</span><span class="mi">51</span><span class="p">;})</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span><span class="k">return</span> <span class="nx">h</span><span class="o">-</span><span class="nx">d</span><span class="p">;})</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span><span class="mi">35</span><span class="p">)</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">i</span><span class="p">){</span><span class="k">return</span> <span class="nx">d</span><span class="p">;})</span>
+                <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="s2">&quot;rgb(100, 0, &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></div>
+
+<blockquote>
+<p>Click <strong><em><a href="http://madhavij.github.io/d3demo.html">here</a></em></strong> to see how the output looks like.</p>
+</blockquote>
+<p><em>Hopefully you enjoyed reading this post and tried recreating this on your own.</em></p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/d3js.html">D3.js</a>, <a href="/tag/visualization.html">visualization</a></p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/madhavij">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/__madhavi__">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>

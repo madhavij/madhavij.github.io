@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+            <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Linear Models</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+
+
+        <meta name="description" content="Digestible explanation of the big words used to describe Linear Model concepts.">
+
+        <meta name="author" content="Madhavi Jouhari">
+
+        <meta name="tags" content="data-science">
+
+	                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Code Memoirs">
+
+	<meta property="og:type" content="article">
+            <meta property="article:author" content="/author/madhavi-jouhari.html">
+	<meta property="og:url" content="/linear-model.html">
+	<meta property="og:title" content="Linear Models">
+	<meta property="article:published_time" content="2021-07-25 00:00:00+05:30">
+            <meta property="og:description" content="Digestible explanation of the big words used to describe Linear Model concepts.">
+
+            <meta property="og:image" content="//images/hex.jpg">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Code Memoirs</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('/images/hex.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Linear Models</h1>
+                        <span class="meta">Posted by
+                                <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+                             on So. 25 Juli 2021
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <!-- Post Content -->
+    <article>
+        <p>Chances are if you to read explanations of what a Linear Model does in Data Science paradigm, a lot of heavy mathematical terms will be thrown at you. 
+There is an equal probability that you may or may not understand it, so here is more watered-down, Explain-Like-I'm-5 summarization to demystify these concepts.</p>
+<h2>Let me Fit those Curves for you</h2>
+<p>You know that a model learns the logic behind the dataset in the training process.
+Behind the curtains, the model is "fitting" the training data or trying to learn its origins using a function <code>y()</code>. </p>
+<div class="highlight"><pre><span></span><code><span class="err">y(w,x) = w_0 +w_1 x + ... + w_M x^M</span>
+</code></pre></div>
+
+<p>In the above equation, the function is of <strong>polynomial</strong> nature. </p>
+<ol>
+<li>Here, <strong>M</strong> is the order of this polynomial function.</li>
+<li>The coefficients w_i is denoted by vector <strong>w</strong></li>
+</ol>
+<p>Although this polynomial is a non-linear function of <strong>x</strong>, it is a LINEAR function of the coefficients <strong>w</strong>.</p>
+<p>Such functions (eg Polynomial), which are linear in unknown (coeff) parameters, have important properties and are called ...</p>
+<p>(<em>drumrolls</em>)</p>
+<p>... <strong>LINEAR MODELS</strong></p>
+<p>The value of <strong>w</strong> (coeffs) is learnt by fitting the function to the training data.</p>
+<p>Now the secret behind the magical process of <em>learning</em> is done by minimizing an <em>Error Function</em>.</p>
+<h4>So umm 'What does this Error function do', you ask?</h4>
+<p>It measures the misfits between the function y(x,w), for any given value w, and the training set datapoints.</p>
+<p>Error Function is a NON-NEGATIVE quantity : which means it can be <strong>0</strong> 
+IF AND ONLY IF the function y(x,w) plot would pass exactly though each training data point in the graph.</p>
+<p>So the curve resulting from plotting the y(x,w) function should fit into the pattern of the training data spread in the plane.</p>
+<blockquote>
+<p>And thats what you call a CURVE FITTING bruh. </p>
+</blockquote>
+<p>A very common Error Function is  Sum of the Squares of the Errors between the predictions y(x_n,w) for each training datapoint x_n and its corresponding target value t_n.
+In this case, we <em>minimize</em></p>
+<div class="highlight"><pre><span></span><code><span class="err">E(w) = 1/2 Sigma n-&gt;N {y(x_n,w) - t_n}^2</span>
+</code></pre></div>
+
+<p>The learning happens when this curve fits properly by choosing value of <strong>w</strong> for which <strong>E(w)</strong>
+is as close to 0 as possible.</p>
+<p>Since the <strong>E(w)</strong> is a quadratic function of <strong>w</strong> -&gt; Its derivative w.r.t. <strong>w</strong> will be linear in elements of <strong>w</strong>.</p>
+<p>That means the process of MINIMIZATION OF ERROR function will yield a unique solution.</p>
+    </article>
+
+        <div class="tags">
+            <p>tags: <a href="/tag/data-science.html">data-science</a></p>
+        </div>
+
+<hr>
+<div class="sharing">
+</div>
+    <hr>
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/madhavij">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/__madhavi__">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog powered by <a href="http://getpelican.com">Pelican</a>,
+    which takes great advantage of <a href="http://python.org">Python</a>.
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="/theme/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="/theme/js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
