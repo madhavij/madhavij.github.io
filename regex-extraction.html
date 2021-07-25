@@ -89,11 +89,7 @@
                         <h1>Extracting To and From Location from a sentence</h1>
                         <span class="meta">Posted by
                                 <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
-<<<<<<< HEAD
                              on Mo. 19 Dezember 2016
-=======
-                             on Mon 19 December 2016
->>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
                         </span>
                         
                     </div>
@@ -108,7 +104,6 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
     <!-- Post Content -->
     <article>
-<<<<<<< HEAD
         <p>While working on a usecase where location words had to be extracted from a sentence.
 Classifying what the source and destination places were, was one of the key requirements.
 This little snippet solved just one of the scenarios, which was achieved using regular expressions. To cover wider scenarios of extraction, use advanced natural language processing techniques for better results.</p>
@@ -120,26 +115,12 @@ This little snippet solved just one of the scenarios, which was achieved using r
 <h4>Solution:</h4>
 <p>Step 1: Getting <strong>Source</strong> city</p>
 <div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="kn">import</span> <span class="nn">re</span>
-=======
-        <p>I was working on a usecase where I had to make this logic to extract locations from a sentence.
-Had to classsify what the source and destination places were, so that we could continue with our analysis.
-This little snippet solved just one of the scenario which could be done using regular expressions. To cover wider scenarios of extraction, use advanced language processing for better results.</p>
-<h4>Task:</h4>
-<p>Get <strong>To</strong> and <strong>From</strong> location from a sentence like this:</p>
-<blockquote>
-<p>I travelled from Stockholm to Antwerp in my car.</p>
-</blockquote>
-<h4>Solution:</h4>
-<p>Step 1: Getting <strong>Source</strong> city</p>
-<div class="highlight"><pre><span></span><span class="err">$</span> <span class="kn">import</span> <span class="nn">re</span>
->>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 <span class="err">$</span> <span class="n">sample</span> <span class="o">=</span> <span class="s2">&quot;I travelled from Stockholm to Antwerp in my car.&quot;</span>
 <span class="err">$</span> <span class="n">pattern</span> <span class="o">=</span> <span class="s2">&quot;from (.*) to&quot;</span>
 <span class="err">$</span> <span class="n">fromLocation</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span>
 <span class="err">$</span> <span class="n">fromLocation</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="err">$</span> <span class="n">_</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span><span class="n">Stockholm</span>
-<<<<<<< HEAD
 </code></pre></div>
 
 <p>Step 2: Getting <strong>Destination</strong> city</p>
@@ -154,23 +135,6 @@ $ _.group<span class="o">(</span><span class="m">1</span><span class="o">)</span
 <h4>What is wrong with this?</h4>
 <p>This is not the cleanest of solutions, as it does not cover all the usecases.</p>
 <p><strong>For example :</strong>
-=======
-</pre></div>
-
-
-<p>Step 2: Getting <strong>Destination</strong> city</p>
-<div class="highlight"><pre><span></span>$ <span class="nv">pattern2</span> <span class="o">=</span> <span class="s2">&quot;to (\w+)&quot;</span>
-$ <span class="nv">toLocation</span> <span class="o">=</span> re.compile<span class="o">(</span>pattern2<span class="o">)</span>
-$ toLocation.search<span class="o">(</span>sample<span class="o">)</span>
-$ _.group<span class="o">(</span>1<span class="o">)</span>
-&gt;&gt;&gt;Antwerp
-</pre></div>
-
-
-<p>Ta da!</p>
-<h4>What is wrong with this?</h4>
-<p>I agree this is not the cleanest of solutions as it does not cover all the usecases.
->>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 It fails to capture cases when city name is divided by spaces (like Los Angeles, New York).</p>
 <h4>Improvements</h4>
 <p>Still working to create a pattern that covers wider scenarios. This post was written just for this particular sentence structure. Please let me know if you have a better regex pattern to solve this.</p>
@@ -207,7 +171,7 @@ It fails to capture cases when city name is divided by spaces (like Los Angeles,
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/__madhavi__">
+                                <a href="https://twitter.com/Jouhari_et_al">
                                     <span class="fa-stack fa-lg">
                                         <i class="fa fa-circle fa-stack-2x"></i>
                                         <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
