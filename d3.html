@@ -89,7 +89,11 @@
                         <h1>Playing Around with D3</h1>
                         <span class="meta">Posted by
                                 <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+<<<<<<< HEAD
                              on Mo. 28 September 2015
+=======
+                             on Mon 28 September 2015
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
                         </span>
                         
                     </div>
@@ -121,6 +125,7 @@
 <p>But first, what is Functional Chaining?</p>
 </blockquote>
 <p>Before you start to write the code, one thing you should be absolutely clear about is this coding style called Functional chaining, because here we’ll be using a lot of it. Without its knowledge, the code might seem pretty absurd to you. It is a technique that can be used to simplify code in scenarios that involve calling multiple functions on the same object consecutively. Its like a Unix pipeline where output of the first function is input to the next.</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
@@ -131,11 +136,26 @@
 <span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
 <span class="nx">p</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
 </code></pre></div>
+=======
+<div class="highlight"><pre><span></span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>If this style is not your cup of tea, you can anyways try the chain-less approach like this: </p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">body</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">body</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">);</span>
+<span class="nx">p</span><span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <blockquote>
 <p>Lets get  <em>started</em>:</p>
 </blockquote>
 <p><strong> Step 1: Selection:</strong>  It helps you target visual elements on the page.</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
 </code></pre></div>
 
@@ -146,12 +166,30 @@
 <p><strong> Step 2: Binding data:</strong> Its as simple as : Input-&gt; Data, Output-&gt; Visual Representation. 
 Now that you have selected which element your data will be associated with, its time to map the data into visuals, and for that we first need to feed our data in.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">dataset</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span> <span class="p">];</span>
+=======
+<div class="highlight"><pre><span></span><span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">(</span><span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;black&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Its like telling a specific element which of its properties you’d like to manipulate.
+<div style="text-align:center" markdown="1">
+<img alt="Selection" src="http://img1.ak.crunchyroll.com/i/spire4/8a657640d7333cbc5173e83751cb74da1404687460_full.jpg" />
+</div></p>
+<p><strong> Step 2: Binding data:</strong> Its as simple as : Input-&gt; Data, Output-&gt; Visual Representation. 
+Now that you have selected which element your data will be associated with, its time to map the data into visuals, and for that we first need to feed our data in.</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">dataset</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">25</span> <span class="p">];</span>
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">).</span><span class="nx">selectAll</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">data</span><span class="p">(</span><span class="nx">dataset</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">enter</span><span class="p">()</span>
     <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;p&quot;</span><span class="p">)</span>
     <span class="p">.</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;New element!&quot;</span><span class="p">);</span>
+<<<<<<< HEAD
 </code></pre></div>
+=======
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <p><strong>d3.select(“body”)</strong> — Looks for the body in  DOM and hands a reference off to the next step in the chain.</p>
 <p><strong>.selectAll(“p”)</strong> — Selects all paragraphs. Since we dont have any,it will output empty selection.(Its ok, dont get confused, I'll explain this below!)</p>
@@ -162,24 +200,44 @@ Now that you have selected which element your data will be associated with, its 
 <p><strong>append()</strong> : Takes the placeholder selection created by enter() and inserts a <strong>p</strong> element into the DOM. Ta-da! The element reference is passed on further in the chain.</p>
 <p><strong>Step 3: Put that data to work!</strong>
  Lets change the last line to:</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">height</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">;})</span>
 </code></pre></div>
 
 <p>You may be wondering why you have to write out <strong>function(d)</strong> instead of just <strong>d</strong> on its own. For example, this won’t give  you the height value:</p>
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span> <span class="p">,</span><span class="nx">d</span><span class="p">);</span>
 </code></pre></div>
+=======
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">height</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span> <span class="k">return</span> <span class="nx">d</span><span class="p">;})</span>
+</pre></div>
+
+
+<p>You may be wondering why you have to write out <strong>function(d)</strong> instead of just <strong>d</strong> on its own. For example, this won’t give  you the height value:</p>
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span> <span class="p">,</span><span class="nx">d</span><span class="p">);</span>
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <p>The reason for this syntax is that <em>.text(), attr()</em>, and many other D3 methods take a function as an argument. Here wrapping <strong>d</strong> in an anonymous function is necessary otherwise <strong>d</strong> will have no value.</p>
 <p>The anonymous function is simply returning the data value, but you can make it fancier by putting your custom code in it.</p>
 <p>For example this cool random color generator:</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">fill</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+=======
+<div class="highlight"><pre><span></span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="err">“</span><span class="nx">fill</span><span class="err">”</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">){</span>
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
  <span class="kd">var</span> <span class="nx">a</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
  <span class="kd">var</span> <span class="nx">b</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
  <span class="kd">var</span> <span class="nx">c</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">round</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">156</span><span class="p">)</span><span class="o">+</span><span class="mi">100</span><span class="p">;</span>
  <span class="kd">var</span> <span class="nx">o</span><span class="o">=</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="o">*</span><span class="mi">1</span><span class="p">;</span>
  <span class="k">return</span> <span class="err">“</span><span class="nx">rgb</span><span class="p">(</span><span class="mi">245</span><span class="p">,</span><span class="err">”</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="err">”</span><span class="p">,</span><span class="err">”</span><span class="o">+</span><span class="nx">c</span><span class="o">+</span><span class="err">”</span><span class="p">)</span><span class="err">”</span><span class="p">;</span>
  <span class="p">});</span>
+<<<<<<< HEAD
 </code></pre></div>
+=======
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <blockquote>
 <p><em>Say Hello to SVG!</em></p>
@@ -187,6 +245,7 @@ Now that you have selected which element your data will be associated with, its 
 <p>D3 is most useful when used to generate and manipulate visuals as SVGs as it is more reliable, visually consistent, and faster. Scalable Vector Graphics is a text-based image format. SVG code can be included directly within any HTML document. It is supported by almost every other modern browser.</p>
 <p>Before you can creating  anything, you must create an SVG element. Think of the SVG element as a canvas on which your visualizations are rendered.</p>
 <p>Its a good practice to give this SVG element a defined height and width, otherwise it will take up as much room as it can within its enclosing element.</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
             <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
@@ -195,6 +254,17 @@ Now that you have selected which element your data will be associated with, its 
 
 <p>Lets make something from what we’ve <em>learnt</em> so far!</p>
 <div class="highlight"><pre><span></span><code><span class="kd">var</span> <span class="nx">w</span><span class="o">=</span><span class="mi">600</span><span class="p">;</span>
+=======
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">svg</span> <span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s2">&quot;body&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s2">&quot;svg&quot;</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;width&quot;</span><span class="p">,</span> <span class="mi">500</span><span class="p">)</span>
+            <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;height&quot;</span><span class="p">,</span> <span class="mi">50</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Lets make something from what we’ve <em>learnt</em> so far!</p>
+<div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">w</span><span class="o">=</span><span class="mi">600</span><span class="p">;</span>
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 <span class="kd">var</span> <span class="nx">h</span><span class="o">=</span> <span class="mi">250</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">dataset</span><span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">200</span><span class="p">,</span><span class="mi">90</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">80</span><span class="p">,</span><span class="mi">30</span><span class="p">,</span><span class="mi">140</span><span class="p">,</span><span class="mi">70</span><span class="p">,</span><span class="mi">150</span><span class="p">,</span><span class="mi">50</span><span class="p">,</span><span class="mi">20</span><span class="p">];</span>
 <span class="kd">var</span> <span class="nx">base</span><span class="o">=</span> <span class="nx">d3</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)</span>
@@ -210,7 +280,12 @@ Now that you have selected which element your data will be associated with, its 
                 <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;width&#39;</span><span class="p">,</span><span class="mi">35</span><span class="p">)</span>
                 <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;height&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">i</span><span class="p">){</span><span class="k">return</span> <span class="nx">d</span><span class="p">;})</span>
                 <span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;fill&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span> <span class="p">{</span><span class="k">return</span> <span class="s2">&quot;rgb(100, 0, &quot;</span> <span class="o">+</span> <span class="p">(</span><span class="nx">d</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;)&quot;</span><span class="p">;</span> <span class="p">});</span>
+<<<<<<< HEAD
 </code></pre></div>
+=======
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <blockquote>
 <p>Click <strong><em><a href="http://madhavij.github.io/d3demo.html">here</a></em></strong> to see how the output looks like.</p>

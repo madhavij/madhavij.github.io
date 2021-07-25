@@ -88,7 +88,11 @@
                         <h1>Clearing Your Server's Cache</h1>
                         <span class="meta">Posted by
                                 <a href="/author/madhavi-jouhari.html">Madhavi Jouhari</a>
+<<<<<<< HEAD
                              on So. 05 Juni 2016
+=======
+                             on Sun 05 June 2016
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
                         </span>
                         
                     </div>
@@ -111,18 +115,33 @@ If one is not accustomed with the linux commands, they rely heavily on Google fo
 <p>If a disk fills up entirely, many services stop working since they have no space to write operational data.</p>
 </li>
 <li>
+<<<<<<< HEAD
 <p>If the memory usage crosses the threshold value, it disables user to SSH into the machine.</p>
+=======
+<p>If it memory usage crosses the threshold value, it disables user to SSH into the machine.</p>
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 </li>
 </ol>
 <h4>Diagnosis:</h4>
 <p>You can check your memory use with the <strong>free</strong> command. It gives the total free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel. (Source: man pages)</p>
 <p><strong>-h</strong> : Stands for Human readable format where output fields are scaled to shortest three digit unit along with their units.</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="err">&gt;&gt; free -h</span>
 </code></pre></div>
 
 <p>Once it is clear that you have memory issue, execute the following to flush cache of Linux memory:</p>
 <div class="highlight"><pre><span></span><code><span class="err">&gt;&gt; sync; echo 3 &gt; /proc/sys/vm/drop_caches</span>
 </code></pre></div>
+=======
+<div class="highlight"><pre><span></span>&gt;&gt; free -h
+</pre></div>
+
+
+<p>Once it is clear that you have memory issue, execute the following to flush cache of Linux memory:</p>
+<div class="highlight"><pre><span></span>&gt;&gt; sync; echo 3 &gt; /proc/sys/vm/drop_caches
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <p>You can replace the "echo 3" part with the following according to your requirement:</p>
 <p><strong>echo 1</strong> : To free pagecache</p>
@@ -133,8 +152,14 @@ If one is not accustomed with the linux commands, they rely heavily on Google fo
 </blockquote>
 <p>Dirty  objects will continue to be in use until written out to disk and are not freeable. Running <strong>sync</strong> before to flush them out to disk, these  drop operations will tend to free more memory.</p>
 <p>If your swap memory is also being utilized, there is a command to <strong>Force Release everything in Swap Partition back to Memory</strong>:</p>
+<<<<<<< HEAD
 <div class="highlight"><pre><span></span><code><span class="err">swapoff -a &amp;&amp; swapon -a</span>
 </code></pre></div>
+=======
+<div class="highlight"><pre><span></span>swapoff -a &amp;&amp; swapon -a
+</pre></div>
+
+>>>>>>> 20e3de1d4f56f4c12c9fc0b84f20134fda2f829f
 
 <p>Its okay if you dont get hang of all the commands in the beginning. It gets better with time.</p>
     </article>
